@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,9 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="topbar">
           <div className="topbar-inner">
-            <Link href="/" className="brand">
-              <span className="brand-dot" />
-              Trade<em>Replay</em>
+            <Link href="/" className="brand" aria-label="TradeReplay home">
+              <Logo />
             </Link>
             <nav className="topnav">
               <Link href="/demo">Demo day</Link>

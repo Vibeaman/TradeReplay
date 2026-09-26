@@ -97,15 +97,20 @@ a {
   letter-spacing: -0.02em;
 }
 
-.brand-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: var(--mint);
-  box-shadow: 0 0 12px var(--mint-glow);
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
 }
 
-.brand em {
+.logo-word {
+  font-weight: 620;
+  font-size: 15.5px;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.logo-word em {
   font-style: normal;
   color: var(--mint);
 }
