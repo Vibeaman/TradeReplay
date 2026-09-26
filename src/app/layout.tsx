@@ -4,7 +4,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "TradeReplay — GitHub for trading",
-  description: "Replay Hyperliquid days. Mistakes labeled from the tape, not vibes.",
+  description:
+    "Connect Hyperliquid. Every fill becomes a commit. Replay the day and see the mistakes, priced from the tape.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -12,22 +13,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;560;600;650&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <header className="nav">
-          <Link href="/" className="display" style={{ fontSize: 22 }}>
-            TradeReplay
-          </Link>
-          <nav style={{ display: "flex", gap: 16, fontSize: 13, color: "var(--muted)" }}>
-            <Link href="/demo">Demo day</Link>
-            <a href="https://github.com/Vibeaman/TradeReplay">GitHub</a>
-          </nav>
-        </header>
+        <div className="topbar">
+          <div className="topbar-inner">
+            <Link href="/" className="brand">
+              <span className="brand-dot" />
+              Trade<em>Replay</em>
+            </Link>
+            <nav className="topnav">
+              <Link href="/demo">Demo day</Link>
+              <Link href="/days">My days</Link>
+              <a href="https://github.com/Vibeaman/TradeReplay" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </nav>
+          </div>
+        </div>
         {children}
+        <footer className="foot">
+          <div className="inner">
+            <span>Reads Hyperliquid. Never trades for you.</span>
+            <span>Mistake rules are published, not predicted.</span>
+            <span>Not financial advice.</span>
+          </div>
+        </footer>
       </body>
     </html>
   );
